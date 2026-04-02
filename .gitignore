@@ -1,0 +1,30 @@
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-electron/
+index-*.js
+
+# Temp/runtime artifacts
+.tmp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Test output
+coverage/
+
+# Python bridge caches
+bridge/__pycache__/
+bridge/*.pyc
