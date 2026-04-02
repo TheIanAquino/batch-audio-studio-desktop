@@ -23,7 +23,8 @@ let mainWindow = null
 let suppressBridgeRestart = false
 
 function bridgeConfigRoot() {
-  return path.join(app.getPath('home'), '.batch-audio-studio')
+  const configured = String(process.env.BATCH_AUDIO_CONFIG_DIR || '').trim()
+  return configured || path.join(app.getPath('home'), '.batch-audio-studio')
 }
 
 function bridgeLogPath() {

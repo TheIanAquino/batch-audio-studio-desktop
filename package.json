@@ -10,8 +10,10 @@
     "test:watch": "vitest",
     "build:bridge-runtime": "node ./scripts/build-bridge-runtime.mjs",
     "build": "vite build",
-    "dist": "npm run build && npm run build:bridge-runtime && electron-builder --mac dir",
-    "dist:app": "npm run build && npm run build:bridge-runtime && electron-builder --mac zip"
+    "dist": "npm run build && npm run build:bridge-runtime && electron-builder --mac dmg",
+    "dist:dir": "npm run build && npm run build:bridge-runtime && electron-builder --mac dir",
+    "dist:zip": "npm run build && npm run build:bridge-runtime && electron-builder --mac zip",
+    "dist:all": "npm run build && npm run build:bridge-runtime && electron-builder --mac dmg zip"
   },
   "dependencies": {
     "framer-motion": "^11.3.19",
@@ -71,8 +73,12 @@
     "mac": {
       "category": "public.app-category.music",
       "target": [
-        "dir"
+        "dmg",
+        "zip"
       ]
+    },
+    "dmg": {
+      "writeUpdateInfo": false
     }
   }
 }
